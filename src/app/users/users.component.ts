@@ -12,7 +12,7 @@ export class UsersComponent implements OnInit {
   constructor(private http:HttpClient) {}
 
   ngOnInit(): void {
-    let resp = this.http.get("https://jsonplaceholder.typicode.com/users");
+    let resp = this.http.get("https://randomuser.me/api/");
     resp.subscribe((data) => this.users = data)
     
   }
