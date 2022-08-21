@@ -1,6 +1,12 @@
 <div>
-  <ul *ngFor="let user of users">
-    <li>{{ user.username }}</li>
-    <li>{{ user.email }}</li>
-  </ul>
+  <div *ngFor="let user of users.results">
+    <p>Name : {{ user.name.first }}</p>
+    <p>Gender : {{ user.gender }}</p>
+    <p>City : {{ user.location.city }}</p>
+    <p>Email : {{ user.email }}</p>
+    <p>Age : {{ user.registered.age }}</p>
+    <p>Pic</p>
+    <p>Phone : {{ user.phone }}</p>
+    <p>Registration Seniority</p>
+  </div>
 </div>
