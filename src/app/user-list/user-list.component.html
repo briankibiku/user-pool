@@ -1,0 +1,55 @@
+<igx-input-group type="search" class="search">
+  <igx-prefix>
+    <igx-icon>search</igx-icon>
+  </igx-prefix>
+  <input
+    #search
+    igxInput
+    placeholder="Search User"
+    [(ngModel)]="searchContact"
+  />
+  <!-- [(ngModel)]="searchContact" -->
+  <igx-suffix *ngIf="search.value.length > 0" (click)="searchContact = null">
+    <igx-icon>clear</igx-icon>
+  </igx-suffix>
+</igx-input-group>
+
+<div class="list-sample">
+  <igx-list>
+    <h4>Users</h4>
+    <br />
+    <!-- isHeader="true" -->
+    <igx-list-item
+      igxRippleTarget=".igx-list__item-content"
+      #item
+      *ngFor="let user of users.data | igxFilter: filterContacts"
+    >
+      <igx-avatar
+        igxListThumbnail
+        class="img-container"
+        [src]="user.avatar"
+      ></igx-avatar>
+      <!-- roundShape="true" -->
+      <span igxListLineTitle>{{ user.first_name }} {{ user.last_name }}</span>
+      <span igxListLineSubTitle>{{ user.email }}</span>
+      <igx-icon
+        igxListAction
+        [style.color]="user.email ? 'black400' : 'black400'"
+        (click)="openEditModal(user)"
+        >visibility</igx-icon
+      >
+      <igx-icon
+        igxListAction
+        [style.color]="user.email ? 'black400' : 'black400'"
+        (click)="openEditModal(user)"
+        >edit</igx-icon
+      >
+      <igx-icon
+        igxListAction
+        [style.color]="user.email ? 'black400' : 'black400'"
+        (click)="openDeleteModal(user)"
+        >delete</igx-icon
+      >
+    </igx-list-item>
+  </igx-list>
+</div>
