@@ -8,7 +8,6 @@
     placeholder="Search User"
     [(ngModel)]="searchContact"
   />
-  <!-- [(ngModel)]="searchContact" -->
   <igx-suffix *ngIf="search.value.length > 0" (click)="searchContact = null">
     <igx-icon>clear</igx-icon>
   </igx-suffix>
@@ -22,20 +21,26 @@
     <igx-list-item
       igxRippleTarget=".igx-list__item-content"
       #item
-      *ngFor="let user of users.data | igxFilter: filterContacts"
+      *ngFor="let user of users.results | igxFilter: filterContacts"
     >
       <igx-avatar
         igxListThumbnail
         class="img-container"
-        [src]="user.avatar"
+        [src]="user.picture.thumbnail"
       ></igx-avatar>
       <!-- roundShape="true" -->
-      <span igxListLineTitle>{{ user.first_name }} {{ user.last_name }}</span>
-      <span igxListLineSubTitle>{{ user.email }}</span>
+      <span igxListLineTitle>{{ user.name.first }} {{ user.name.last }}</span>
+      <span igxListLineSubTitle>
+        Email:{{ user.email }} Phone : {{ user.phone }}
+
+        <button mat-button color="primary" (click)="openViewMoreModal(user)">
+          View more
+        </button>
+      </span>
       <igx-icon
         igxListAction
         [style.color]="user.email ? 'black400' : 'black400'"
-        (click)="openEditModal(user)"
+        (click)="viewUserModal(user)"
         >visibility</igx-icon
       >
       <igx-icon
