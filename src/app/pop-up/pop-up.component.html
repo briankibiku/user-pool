@@ -1,0 +1,72 @@
+<h6 mat-dialog-title>
+  {{ data.user.name.first }} {{ data.user.name.last }} details
+</h6>
+<br />
+<mat-dialog-content>
+  <div>
+    <igx-avatar
+      igxListThumbnail
+      class="img-container"
+      [src]="data.user.picture.thumbnail"
+    ></igx-avatar>
+    <p>
+      Name :
+      <input
+        matInput
+        placeholder="Ex. It makes me feel..."
+        value="{{ data.user.name.first }}"
+      />
+    </p>
+    <p>
+      Gender :
+      <input
+        matInput
+        placeholder="Ex. It makes me feel..."
+        value="{{ data.user.gender }}"
+      />
+    </p>
+    <p>
+      City :
+      <input
+        matInput
+        placeholder="Ex. It makes me feel..."
+        value="{{ data.user.location.city }}"
+      />
+    </p>
+    <p>
+      Email :
+      <input
+        matInput
+        placeholder="Ex. It makes me feel..."
+        value="{{ data.user.email }}"
+      />
+    </p>
+    <p>
+      Age :
+      <input
+        matInput
+        placeholder="Ex. It makes me feel..."
+        value="{{ data.user.registered.age }}"
+      />
+    </p>
+    <p>
+      Phone :
+      <input
+        matInput
+        placeholder="Ex. It makes me feel..."
+        value="{{ data.user.phone }}"
+      />
+    </p>
+    <p>
+      Registration Seniority :
+      <input
+        matInput
+        placeholder="Ex. It makes me feel..."
+        value="{{ data.user.registered.age }}"
+      />
+    </p>
+  </div>
+</mat-dialog-content>
+<mat-dialog-actions>
+  <button mat-raised-button (click)="closeDialog()">Close</button>
+</mat-dialog-actions>

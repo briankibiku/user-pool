@@ -1,0 +1,23 @@
+<h6 mat-dialog-title>
+  {{ data.user.name.first }} {{ data.user.name.last }} details
+</h6>
+<br />
+<mat-dialog-content>
+  <div>
+    <igx-avatar
+      igxListThumbnail
+      class="img-container"
+      [src]="data.user.picture.thumbnail"
+    ></igx-avatar>
+    <p>Name : {{ data.user.name.first }} {{ data.user.name.last }}</p>
+    <p>Gender : {{ data.user.gender }}</p>
+    <p>City : {{ data.user.location.city }}</p>
+    <p>Email : {{ data.user.email }}</p>
+    <p>Age : {{ data.user.registered.age }}</p>
+    <p>Phone : {{ data.user.phone }}</p>
+    <p>Registration Seniority : {{ data.user.registered.age }}</p>
+  </div>
+</mat-dialog-content>
+<mat-dialog-actions>
+  <button mat-raised-button (click)="closeDialog()">Close</button>
+</mat-dialog-actions>
