@@ -25,3 +25,12 @@ igx-icon {
 .img-container{
     border-radius: 10px;
 }
+
+.btn-primary{
+    background-color: cornflowerblue;
+    color: #fff;
+    width: 200px;
+    height: 40px;
+    border-radius: 10px;
+    border: none;
+}
