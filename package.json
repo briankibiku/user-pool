@@ -27,6 +27,7 @@
     "igniteui-angular": "14.0.13",
     "jszip": "^3.10.0",
     "minireset.css": "~0.0.4",
+    "ngx-csv": "^0.3.2",
     "path": "^0.12.7",
     "rxjs": "~7.5.0",
     "tslib": "^2.3.0",
@@ -47,5 +48,8 @@
     "karma-jasmine-html-reporter": "~2.0.0",
     "typescript": "~4.7.2"
   },
-  "engines": {"node": "16.14.0", "npm": "8.3.1"}
+  "engines": {
+    "node": "16.14.0",
+    "npm": "8.3.1"
+  }
 }

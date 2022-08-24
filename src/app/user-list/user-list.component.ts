@@ -4,6 +4,7 @@ import { HttpClient } from '@angular/common/http';
 import { MatDialog } from '@angular/material/dialog';
 import { PopUpComponent } from '../pop-up/pop-up.component';
 import { UserInfoComponent } from '../user-info/user-info.component';
+import { ngxCsv } from 'ngx-csv';
 
 @Component({
   selector: 'app-user-list',
@@ -15,49 +16,28 @@ export class UserListComponent implements OnInit {
   public userObject: any;
   public users: any;
 
-  public contacts = [
-    {
-      isFavorite: false,
-      name: 'Lisa Landers',
-      phone: '901-747-3428',
-      photo:
-        'https://www.infragistics.com/angular-demos-lob/assets/images/women/3.jpg',
-    },
-    {
-      isFavorite: true,
-      name: 'Dorothy H. Spencer',
-      phone: '573-394-9254',
-      photo:
-        'https://www.infragistics.com/angular-demos-lob/assets/images/women/67.jpg',
-    },
-    {
-      isFavorite: false,
-      name: 'Donna Price',
-      phone: '859-496-2817',
-      photo:
-        'https://www.infragistics.com/angular-demos-lob/assets/images/women/50.jpg',
-    },
-    {
-      isFavorite: false,
-      name: 'Lisa Landers',
-      phone: '901-747-3428',
-      photo:
-        'https://www.infragistics.com/angular-demos-lob/assets/images/women/3.jpg',
-    },
-    {
-      isFavorite: true,
-      name: 'Dorothy H. Spencer',
-      phone: '573-394-9254',
-      photo:
-        'https://www.infragistics.com/angular-demos-lob/assets/images/women/67.jpg',
-    },
-  ];
-
   constructor(private http: HttpClient, private dialogRef: MatDialog) {}
 
   public ngOnInit() {
     let resp = this.http.get('https://randomuser.me/api/?results=16');
     resp.subscribe((data) => (this.users = data));
+  }
+
+  public fileDownload() {
+    console.log(this.users);
+    console.log('EXPORT CSV');
+    var options = {
+      fieldSeparator: ',',
+      quoteStrings: '"',
+      decimalseparator: '.',
+      showLabels: true,
+      showTitle: true,
+      title: 'User list',
+      useBom: true,
+      // noDownload: false,
+      // headers: ['Gender', 'Last Name', 'Email', 'Phone'],
+    };
+    new ngxCsv(this.users.results, 'UserList', options);
   }
 
   public viewUserModal(contact: any) {
