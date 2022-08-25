@@ -61,3 +61,6 @@ KEY : ✅ COMPLETE, ❌ NOT DONE, 🚧 PARTLY DONE
 ![Screenshot from 2022-08-25 06-43-36](https://user-images.githubusercontent.com/10972674/186571120-37d7d785-5e22-4399-9b2b-5a0605d97c82.png)
 
 6. Open the image on browser on address localhost:4200
+![Screenshot from 2022-08-25 06-59-53](https://user-images.githubusercontent.com/10972674/186571729-cd0fd844-a4dd-4354-961f-207689cc9bb0.png)
+
+
