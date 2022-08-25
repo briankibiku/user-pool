@@ -15,12 +15,22 @@ export class UserListComponent implements OnInit {
   public searchContact: any;
   public userObject: any;
   public users: any;
+  public genderList: any;
 
   constructor(private http: HttpClient, private dialogRef: MatDialog) {}
 
   public ngOnInit() {
     let resp = this.http.get('https://randomuser.me/api/?results=16');
     resp.subscribe((data) => (this.users = data));
+
+    this.populateGenerList().subscribe((result: any) => console.log(result));
+  }
+
+  populateGenerList() {
+    this.genderList = this.users.results.map((user: any) => user.gender);
+    console.log(this.genderList);
+    console.log('GENDR LIST');
+    return this.genderList;
   }
 
   public fileDownload() {

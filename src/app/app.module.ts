@@ -9,6 +9,7 @@ import { FormsModule } from '@angular/forms';
 import { MatDialogModule } from '@angular/material/dialog';
 import { MatInputModule } from '@angular/material/input';
 import { MatButtonModule } from '@angular/material/button';
+import { MatIconModule } from '@angular/material/icon';
 
 import {
   IgxAvatarModule,
@@ -33,6 +34,7 @@ import { UserInfoComponent } from './user-info/user-info.component';
     UserInfoComponent,
   ],
   imports: [
+    MatIconModule,
     MatDialogModule,
     MatInputModule,
     MatButtonModule,

@@ -33,9 +33,30 @@
         [src]="user.picture.thumbnail"
       ></igx-avatar>
       <!-- roundShape="true" -->
-      <span igxListLineTitle>{{ user.name.first }} {{ user.name.last }}</span>
+      <span igxListLineTitle
+        >{{ user.name.first }} {{ user.name.last }}
+        <span *ngIf="user.gender == 'male'; else templateName"
+          ><mat-icon
+            aria-hidden="false"
+            aria-label="Example home icon"
+            fontIcon="male"
+          ></mat-icon
+          >Age : {{ user.registered.age }}</span
+        ></span
+      >
+      <ng-template #templateName>
+        <mat-icon
+          aria-hidden="false"
+          aria-label="Example home icon"
+          fontIcon="female"
+        ></mat-icon
+        >Age :
+        {{ user.registered.age }}
+      </ng-template>
       <span igxListLineSubTitle>
-        Email:{{ user.email }} Phone : {{ user.phone }}
+        <span style="color: #000">Phone :</span> {{ user.phone }}
+        <span style="color: #000">City :</span>
+        {{ user.location.city }}
 
         <button mat-button color="primary" (click)="openViewMoreModal(user)">
           View more
