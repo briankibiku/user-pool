@@ -1,27 +1,47 @@
 # UserPool
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 14.1.3.
+## Getting started with this project
 
-## Development server
+### Method 1: Cloning from github
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+1. Clone using this command ```git@github.com:briankibiku/user-pool.git```
+2. Run ```npm install && ng serve``` open app on port localhost/4200
 
-## Code scaffolding
+### Method 2: Using docker
+1. Clone using this command ```git@github.com:briankibiku/user-pool.git```
+2. Build the docker file locally
+3. Open docker desktop and navigate to images 
+4. Click on the RUN button on the ```user-pool``` image and confirm to Run
+5. Click on ```start``` to run the container
+6. Open the image on browser on address localhost:4200
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
 
-## Build
+KEY : ✅ COMPLETE, ❌ NOT DONE, 🚧 PARTLY DONE
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+## Achieved Target Topics
+✅ Display below user information
 
-## Running unit tests
+    • Name
+    • Gender
+    • Location
+    • E-mail
+    • Current Age
+    • Registration Seniority (period since registration)
+    • Phone number
+    • Picture
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+❌ Should be possible to filter by gender and by nationality.
 
-## Running end-to-end tests
+✅Should be possible to export current list by CSV or XML.
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+## Required topics to take into account:
 
-## Further help
+✅  Focus on design (feel free to use component libraries, p.e. Angular Material)
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+✅ Code standards / clean code
+
+🚧 Unit Testing
+
+✅ Responsiveness
+
+✅ Docker with the necessary configs to serve the SPA
